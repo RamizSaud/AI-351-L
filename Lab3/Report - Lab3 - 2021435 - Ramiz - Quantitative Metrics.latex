@@ -1,0 +1,109 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Lab 3 -- Quantitative Metrics}
+
+\textbf{Data Preprocessing and Initial Challenges}
+
+I successfully addressed two key data preprocessing challenges in my
+analysis. Firstly, I resolved the issue of missing values and tackled
+data type inconsistencies. Following this, I preserved the current state
+of the dataset by saving it. Subsequently, I reloaded the data and
+performed data standardization using the
+\textquotesingle LabelEncoder\textquotesingle{} from the Scikit-Learn
+library.
+
+My analysis extended to feature selection, where I employed various
+techniques to identify the most relevant columns. After rigorous
+evaluation, I identified a set of 30 features that exhibited the
+strongest associations with the target variable. As a result, I pruned
+the remaining columns, focusing on these 30 selected features for
+subsequent analysis.
+
+\textbf{Application of Linear Regression Model}
+
+I then applied a Linear Regression algorithm to the refined dataset and
+assessed its performance. Initially, when evaluating the model on the
+training data, I observed a remarkable accuracy score of 1. However,
+this seemingly perfect accuracy raised concerns of overfitting,
+prompting me to verify the model\textquotesingle s performance on unseen
+data.
+
+\textbf{Testing Data Evaluation and Visualization}
+
+To evaluate the model\textquotesingle s generalization capability, I
+employed a scatter plot to visualize the disparities between actual and
+predicted outputs. To my satisfaction, the plot revealed a close
+alignment between the two, suggesting that the model\textquotesingle s
+predictions were highly accurate on the testing data.
+
+\textbf{Quantitative Model Assessment}
+
+To quantitatively gauge the model\textquotesingle s performance, I
+calculated three common metrics: Mean Squared Error (MSE), Mean Absolute
+Error (MAE), and Root Mean Squared Error (RMSE). All three metrics
+consistently indicated that the model\textquotesingle s error was nearly
+zero, reinforcing the conclusion that the model was performing
+exceptionally well.
+
+\textbf{High Accuracy Justification}
+
+This exceptional accuracy can be attributed to the high correlation
+observed between various features and the target variable, with some
+correlations surpassing the 0.85 threshold. Moreover, the meticulous and
+iterative feature selection process, which distilled the initial 55
+columns down to the optimal 30, further contributed to the
+model\textquotesingle s outstanding performance.
+
+\end{document}
